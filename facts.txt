@@ -1,0 +1,41 @@
+Contrastive learning is a machine learning technique where a model learns to understand data by comparing differences and similarities, rather than being told exactly what everything is.
+
+Instead of learning to classify a specific label (e.g., "this image is a dog"), a contrastive model learns a general rule: "These two things are similar, and those two things are different."
+
+To succeed in Track B, you will likely use a loss function like Triplet Margin Loss or InfoNCE (Contrastive Loss). You feed all three texts through your neural network to get three vectors. The math then calculates the error based on how close the Anchor is to the Positive compared to the Negative, and updates the model weights to correct it.
+
+
+
+---- eda ---
+if similar story > disimilar story -> the model learns len(text) heuristic
+both histograms and kde used for visualizing the distribution of a continuous variable
+    -> histograms in bins ( changing the bin widht, changes our distribtuion )
+    -> kde : continuous, smoother probability cyrve
+
+kde_distributions/histogram_distributions:
+on average disimilar texts are slightly longer than the rest 
+orange curve wide and spread to the right -> disimilar text frequently have completely diferent lengths than their anchor counterparts
+jacard similarity show healthy dataset characteristics : 10% word overlapping for disimilar and around 0.2 to 0.25 at similar
+
+metadata_balance:
+- perfect split 50/50 between True and False
+- this way our model wont develop a poistional bias
+- llama-3.3-70B is geneating significantly shorter stories ( avg. 90 words) compaer to OpenaI gpt 5 chat ( aprox 180 words )
+- the risk for lenght heuristic + model heuristic ( if fed the model name )
+
+advanced_nlp:
+- NER Jacard Index ( overlap is near zero ) -> synthethic generation did not just copy-paste names ;
+    the model has to understand the plot rather than just matching the word "John"
+- flesch reading ease -> all roles follow the same distributon curve centered around 30-40, meaning that the "difficulty" of writing is consistent across the dataset.
+- sentiment polarity centered around 0 -> we do not have sentiment heuristic "happy" or "sad" emotions
+
+baseline_embeddings_pca
+- we have hard negatives -> PCA shows that we cant rely on embeddings
+- methodology : all-MiniLM-L6-v2 ( 384-dimensional embedding vector )
+              : PCA squashed the 384 vector into 2 dimensions ( X and Y )
+
+ngram_frequencies
+- anchor: the film concludes with -> similar : the story concludes with ( the llm rewriting just replaced a word "film" for "story" -> can be used as a heuristic)
+- disimilar: " dystopian metropolis, bustling metropolis" ( when the LLM was asked to generate a "disimilar" negative example it defaulted to this phrase)
+- word dystopian might be used as negative heuristic
+- LLM voice : " delves deeper into the" / "as they delve deeper into" | "with the help of a" | "hanging precariously in the balance" / "hangs in the balance as" 
