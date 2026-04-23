@@ -6,7 +6,7 @@ We use a naive prompt for chatGPT, a random baseline, or a Jaccard similarity ba
 
 import random
 from enum import Enum
-
+from openai import OpenAI
 from tqdm import tqdm
 import pandas as pd
 from pydantic import BaseModel

@@ -75,7 +75,7 @@ for baseline in ["sbert", "story-emb", "random"]:
 
     embedding_lookup = dict(zip(data["text"], embeddings))
     accuracy = evaluate("../dataset/test_track_b_labels.jsonl", embedding_lookup)
-    print(f"Accuracy: {accuracy:.3f}")
+    print(f"{baseline}: Accuracy: {accuracy:.3f}")
 
     os.makedirs("output", exist_ok=True)
     np.save(f"output/{baseline}_track_b.npy", embeddings)
