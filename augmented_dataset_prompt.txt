@@ -1,0 +1,21 @@
+You are an expert literary theorist and data generator for a complex Machine Learning task. 
+Your goal is to generate training triplets for a "Narrative Similarity" model.
+
+Generate 5 entirely distinct story triplets. DO NOT use plots from Wikipedia, famous movies, or modern books. Fabricate completely original plots, or use obscure public domain myths.
+
+For each triplet, you must generate three short paragraphs (3-6 sentences each):
+1. 'anchor': A baseline story with a clear Setting, Conflict, Course of Action, and Resolution.
+2. 'similar_story': A story that shares the EXACT SAME underlying narrative arc (same type of conflict and same resolution) as the anchor, but uses completely DIFFERENT settings, character names, and vocabulary. (e.g., If the anchor is sci-fi, make this fantasy. Do not reuse nouns or verbs if possible).
+3. 'dissimilar_story': A story that shares the same SETTING and VOCABULARY as the anchor, but has a fundamentally DIFFERENT resolution or character arc.
+
+CRITICAL CONSTRAINTS:
+- Avoid repetitive transitions (Do NOT use phrases like "The story concludes with" or "Eventually,").
+- Vary the sentence lengths naturally.
+- Output ONLY valid JSON in the following format, with no markdown formatting or introductory text:
+[
+  {
+    "anchor": "...",
+    "similar_story": "...",
+    "dissimilar_story": "..."
+  }
+]
