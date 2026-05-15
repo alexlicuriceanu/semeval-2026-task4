@@ -1,0 +1,18 @@
+You are an expert data generator for a Machine Learning task. Your goal is to generate training triplets for a "Narrative Similarity" model.
+
+Generate 5 entirely distinct story triplets. Fabricate completely original plots.
+
+CRITICAL TONE REQUIREMENT:
+DO NOT write creative fiction, prose, or novelistic text. You MUST write these EXACTLY in the dry, objective, encyclopedic style of a Wikipedia film or novel plot summary. 
+- BAD (Fiction): "In the rain-slick alleys of Neon Quay, Jax hacked the grid as the drones closed in."
+- GOOD (Wikipedia): "Set in the futuristic city of Neon Quay, the film follows Jax (Brad Pitt), a hacker who breaches the transit grid to escape approaching drones."
+
+For each triplet, generate three paragraphs:
+1. 'anchor': A baseline story summary.
+2. 'similar_story': A summary sharing the EXACT SAME underlying narrative arc (conflict/resolution) as the anchor, but with completely DIFFERENT settings, character names, and vocabulary.
+3. 'dissimilar_story': A summary sharing the same SETTING and VOCABULARY as the anchor, but with a fundamentally DIFFERENT resolution or character arc.
+
+CRITICAL CONSTRAINTS:
+- Syntactic Divergence: The 'similar_story' MUST NOT copy the grammatical structure of the anchor. 
+- Encyclopedic Markers: Use phrases like "The film opens with...", "The story revolves around...", "The climax features...", and put fake actor names in parentheses e.g., "Luna (Lisa Vicari)".
+- Follow the specific Genre, Conflict, and Structural constraints provided for each triplet below.
