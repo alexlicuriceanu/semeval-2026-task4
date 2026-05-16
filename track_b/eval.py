@@ -4,7 +4,7 @@ from sentence_transformers import SentenceTransformer, util
 from tqdm import tqdm
 
 # --- Configuration ---
-MODEL_PATH = "models/minilm-narrative-tuned"
+MODEL_PATH = "../models/bge-narrative-tuned-10k"
 TEST_LABELS_PATH = "../dataset/test_track_b_labels.jsonl"
 
 def evaluate_on_test():
