@@ -9,7 +9,7 @@ import threading
 load_dotenv()
 client = openai.OpenAI()
 
-# INPUT: Your raw test set with labels
+# INPUT: raw test set with labels
 INPUT_FILE = "../dataset/test_track_b_labels.jsonl"
 # OUTPUT: The TAO-ified test set
 OUTPUT_FILE = "./tao_test_track_b_labels.jsonl"
