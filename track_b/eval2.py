@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 # --- Configuration ---
 # Point this to the model you saved after Track B fine-tuning
-MODEL_PATH = "models/minilm-narrative-tuned" 
+MODEL_PATH = "../models/bge-narrative-tuned-10k" 
 TEST_DATA_PATH = "../dataset/test_track_a.jsonl"
 TEST_LABELS_PATH = "../dataset/test_track_a_labels.jsonl"
 
