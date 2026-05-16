@@ -1,0 +1,10 @@
+bge augmented dataset: 0.60
+TAO + BGE: 0.61 (A) 0.59 (B)
+TAO + BGE + AUGMENTED: 0.63 (A) 0.625 (B)
+GPT-4o-mini zero-shot: 0.655
+GPT-4o-mini few-shot: 0.680
+Llama 3.1 70B few shot + majority vote: 0.6825
+Llama 3.1 8B few shot: 0.660
+GPT-4o few-shot: 0.7550
+GPT-5.4 few-shot: 0.7225
+Deepseek-R1 few shot: 0.6425
